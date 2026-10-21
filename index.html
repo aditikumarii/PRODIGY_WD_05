@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Check current weather conditions for any city.">
+  <title>Atmosphere | Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#">
+        <span class="brand-icon">☁</span>
+        <span>atmosphere<span class="brand-dot">.</span></span>
+      </a>
+      <span class="live-label"><span class="live-dot"></span> LIVE WEATHER</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR WEATHER, SIMPLIFIED</p>
+      <h1>Feel the <span>forecast.</span></h1>
+      <p class="subtitle">A little closer to the sky. Discover the weather anywhere.</p>
+
+      <form id="search-form" class="search-box">
+        <span class="search-icon">⌕</span>
+        <input
+          id="city-input"
+          type="text"
+          placeholder="Search a city, e.g. Dehradun"
+          aria-label="City name"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" id="search-button">Search <span>→</span></button>
+      </form>
+      <p class="search-hint">Try London, Tokyo, Mumbai or your hometown.</p>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite">
+      Connecting to weather service...
+    </p>
+
+    <section id="weather" class="weather-card" aria-label="Current weather" hidden>
+      <div class="weather-heading">
+        <div>
+          <p class="eyebrow">CURRENT CONDITIONS</p>
+          <h2 id="location">Dehradun, India</h2>
+          <p id="local-time" class="muted">Local time</p>
+        </div>
+        <div class="condition-badge">
+          <span class="live-dot"></span> Now
+        </div>
+      </div>
+
+      <div class="main-weather">
+        <div>
+          <p id="condition" class="condition-text">Partly cloudy</p>
+          <div class="temperature-line">
+            <span id="temperature">--</span><span class="degree">°C</span>
+          </div>
+          <p id="feels-like" class="muted">Feels like --°C</p>
+        </div>
+        <div id="weather-icon" class="weather-icon" aria-hidden="true">🌤️</div>
+      </div>
+
+      <div class="weather-divider"></div>
+
+      <div class="details-grid">
+        <article class="detail">
+          <span class="detail-icon">🌡️</span>
+          <div>
+            <p class="detail-label">FEELS LIKE</p>
+            <p class="detail-value" id="detail-feels">--°C</p>
+          </div>
+        </article>
+        <article class="detail">
+          <span class="detail-icon">💧</span>
+          <div>
+            <p class="detail-label">HUMIDITY</p>
+            <p class="detail-value" id="humidity">--%</p>
+          </div>
+        </article>
+        <article class="detail">
+          <span class="detail-icon">💨</span>
+          <div>
+            <p class="detail-label">WIND SPEED</p>
+            <p class="detail-value" id="wind">-- km/h</p>
+          </div>
+        </article>
+        <article class="detail">
+          <span class="detail-icon">👁️</span>
+          <div>
+            <p class="detail-label">VISIBILITY</p>
+            <p class="detail-value" id="visibility">-- km</p>
+          </div>
+        </article>
+      </div>
+
+      <p id="updated" class="updated">Weather data provided by Open-Meteo</p>
+    </section>
+
+    <footer>
+      <p>Made with <span class="heart">♥</span> and a little curiosity.</p>
+      <p>Powered by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo API</a></p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
